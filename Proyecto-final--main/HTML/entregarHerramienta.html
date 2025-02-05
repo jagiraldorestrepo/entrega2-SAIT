@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Herramientas</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { display: flex; gap: 20px; }
+        .section { border: 1px solid #000; padding: 10px; width: 30%; }
+        .mechanic, .tool { cursor: pointer; text-align: center; margin: 5px; }
+        .mechanic img, .tool img { width: 80px; height: 80px; display: block; margin: auto; }
+        .view-section { margin-top: 20px; }
+        .view-section table { width: 100%; border-collapse: collapse; }
+        .view-section th, .view-section td { border: 1px solid #000; padding: 8px; text-align: left; }
+    </style>
+    <link rel="stylesheet" href="/CSS/entregarHerramienta.css">
+</head>
+<body>
+    
+    <div id="navbar"></div>
+    <h2>Gestión de Herramientas</h2>
+    <div class="container">
+        <!-- Sección de Mecánicos -->
+        <div class="section">
+            <h3>Mecánicos</h3>
+            <div id="mechanicList"></div>
+        </div>
+
+        <!-- Sección de Herramientas -->
+        <div class="section">
+            <h3>Herramientas</h3>
+            <div id="toolList"></div>
+        </div>
+
+        <!-- Sección de Registro -->
+        <div class="section">
+            <h3>Registro</h3>
+            <p><strong>Mecánico:</strong> <span id="selectedMechanic">N/A</span></p>
+            <p><strong>Herramienta:</strong> <span id="selectedTool">N/A</span></p>
+            <input type="hidden" id="selectedToolId">
+            <input type="datetime-local" id="dateTime">
+            <button id="entregaButton" onclick="registerAction('entrega')">ENTREGA</button>
+            <button id="recibeButton" onclick="registerAction('recibe')">RECIBE</button>
+        </div>
+    </div>
+
+    <!-- Sección de Vista -->
+    <div class="view-section">
+        <h3>Registro de entregas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mecánico</th>
+                    <th>Herramienta</th>
+                    
+                    <th>hora de entrega</th>
+
+                </tr>
+            </thead>
+            <tbody id="viewTableBody">
+                <!-- Contenido generado dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/JS/entregarHerramienta.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Consumible</title>
+  <link rel="stylesheet" href="/CSS/agregarConsumible.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Contenedor Principal -->
+  <div class="container">
+    
+    <!-- Sección Izquierda: Formulario -->
+    <div class="form-container">
+      <h2>Agregar consumible</h2>
+      <form id="agregarConsumibleForm">
+        
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+          <label for="id">ID:</label>
+          <input type="text" id="id" name="id" required>
+        </div>
+        <div>
+          <label for="modulo">Modulo:</label>
+          <select id="modulo" name="modulo" required>
+            <option value="" disabled selected>Seleccione un módulo</option>
+            <option value="1">1 - llaves</option>
+            <option value="2">2 - Herramienta de corte</option>
+            <option value="3">3 - Herramienta de medición</option>
+            <option value="4">4 - brocas</option>
+
+          </select>
+        </div>
+        <div>
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+            <option value="" disabled selected>Seleccione un estado</option>
+            <option value="Disponible">Disponible</option>
+            <option value="No disponible">No dispobible</option>
+          </select>
+        </div>
+        <div>
+            <label for="cantidad">Cantidad de consumible:</label>
+            <input type="text" id="cantidad" name="cantidad" required>
+        </div>
+        <div>
+            <label for="costo">costo:</label>
+            <input type="text" id="costo" name="costo" required>
+        </div>
+        <div>
+          <label for="foto">Foto:</label>
+          <input type="file" id="foto" name="foto" accept="image/*" >
+        </div>
+        <div>
+          <button type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sección Derecha: Vista de consumibles Agregados -->
+    <div class="view-container">
+      <h2>Consumibles Agregados</h2>
+      <div id="consumibles-list">
+        <p>No hay consumibles agregados aún.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/JS/agregarConsumible.js"></script>
+</body>
+</html>

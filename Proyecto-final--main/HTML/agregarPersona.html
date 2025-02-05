@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Persona</title>
+  <link rel="stylesheet" href="/CSS/agregarPersona.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Contenedor Principal -->
+  <div class="container">
+    
+    <!-- Sección Izquierda: Formulario -->
+    <div class="form-container">
+      <h2>Agregar Persona</h2>
+      <form id="agregarMecanicoForm">
+        <div>
+          <label for="rol">Rol:</label>
+          <select id="rol" name="rol" required>
+            <option value="Mecánico">Mecánico</option>
+            <option value="Director">Director</option>
+          </select>
+        </div>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+          <label for="id">ID:</label>
+          <input type="text" id="id" name="id" required>
+        </div>
+        <div>
+          <label for="foto">Foto:</label>
+          <input type="file" id="foto" name="foto" accept="image/*" >
+        </div>
+        <div>
+          <button type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sección Derecha: Vista de Personas Agregadas -->
+    <div class="view-container">
+      <h2>Personas Agregadas</h2>
+      <div id="personas-list">
+        <p>No hay personas agregadas aún.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/JS/agregarPersona.js"></script>
+</body>
+</html>

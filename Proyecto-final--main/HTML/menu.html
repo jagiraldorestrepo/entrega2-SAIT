@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetalMec - Soluciones Industriales</title>
+    <link rel="stylesheet" href="/CSS/menu.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Sección Hero -->
+    <div class="hero">
+        <h1>Soluciones Metal Mecánicas de Calidad</h1>
+        <p>Fabricación y mantenimiento industrial con tecnología de punta.</p>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Sobre Nosotros -->
+        <div class="section">
+            <h2>¿Quiénes Somos?</h2>
+            <p>Somos una empresa líder en el sector metalmecánico con más de 20 años de experiencia, ofreciendo soluciones industriales innovadoras y eficientes.</p>
+        </div>
+
+        <!-- Servicios -->
+        <div class="section">
+            <h2>Nuestros Servicios</h2>
+            <div class="services">
+                <div class="service">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3603/3603501.png" alt="Fabricación">
+                    <h3>Fabricación Industrial</h3>
+                    <p>Diseñamos y producimos piezas metálicas para diversos sectores.</p>
+                </div>
+                <div class="service">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2769/2769766.png" alt="Soldadura">
+                    <h3>Soldadura Especializada</h3>
+                    <p>Servicios de soldadura de alta precisión con equipos avanzados.</p>
+                </div>
+                <div class="service">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2853/2853220.png" alt="Mantenimiento">
+                    <h3>Mantenimiento Industrial</h3>
+                    <p>Soluciones para el mantenimiento de maquinaria y estructuras metálicas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacto -->
+        <div class="cta">
+            <button onclick="location.href='agregarPersona.html'">¡Comience agregando una persona!</button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MetalMec. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Cargar Navbar -->
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(error => console.error("Error cargando el navbar:", error));
+    </script>
+
+</body>
+</html>
